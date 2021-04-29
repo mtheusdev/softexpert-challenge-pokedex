@@ -1,9 +1,5 @@
-@font-face {
-  font-family: Poppins;
-  src: url('./fonts/Poppins-Light.ttf');
-}
 
 h1 {
-  font-family: Poppins;
+  font-family: 'Pokemon Hollow', sans-serif;
   margin: 0
 }
