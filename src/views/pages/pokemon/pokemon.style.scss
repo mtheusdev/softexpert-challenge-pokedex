@@ -1,0 +1,136 @@
+.container-pokemon-details {
+  
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  
+  span.name-pokemon {
+    font-size: 50px;
+    color: white;
+    padding: 0 30px 0 30px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .pokemon{
+    padding: 30px;
+    width: 500px;
+    height: 320px;
+    position: absolute;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: inset 0 0 0.5em #ffffff, 0 0 0.5em #00000073;
+
+
+    button.sprite{
+      height: 150px;
+      width: 150px;
+      margin-left: 400px;
+      margin-top: -60px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      img {
+        height: 150px;
+        width: 150px;
+      }
+    }
+    
+    div.pokemon-image {
+      margin-top: -50px;
+      img {
+        width: 350px;
+        height: 350px;
+      }
+      
+    }
+  }
+
+  .details {
+    width: 500px;
+    height: 700px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: inset 0 0 1em #252525, 1em 1em 3em rgb(0, 0, 0);
+  }
+  
+  table {
+    padding: 20px;
+    margin-bottom: 25px;
+    
+    th {
+      font-size: 20px;
+      font-weight: 300;
+    }
+    td {
+      padding-left: 30px;
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
+
+}
+
+.grass-bg {
+  background-image: url(https://i.pinimg.com/originals/b1/da/c0/b1dac0470bdf2f7cc0c559599fba19f9.jpg);
+}
+.bug-bg {
+  background-image: url(https://i.pinimg.com/originals/0a/9f/8f/0a9f8f7af188f31a1bce6ef02e4b57b2.jpg);
+}
+.dark-bg {
+  background-image: url(https://img4.goodfon.com/wallpaper/nbig/1/ba/pokemon-halloween-art-noch-pokemony-khellouin.jpg);
+}
+.dragon-bg {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b9efbc15-761b-4eb1-818f-a87f60753ce6/dbboaed-648f8c4d-2577-40de-9e14-831c26f69365.jpg/v1/fill/w_1280,h_720,q_75,strp/thefatrat___fly_away_official_artwork_by_jordangrimmer_dbboaed-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03MjAiLCJwYXRoIjoiXC9mXC9iOWVmYmMxNS03NjFiLTRlYjEtODE4Zi1hODdmNjA3NTNjZTZcL2RiYm9hZWQtNjQ4ZjhjNGQtMjU3Ny00MGRlLTllMTQtODMxYzI2ZjY5MzY1LmpwZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.-QxU4GSDK6z5pzISpAvSDyTHmTYrskzU2bK2Z6RW0PA);
+}
+.eletric-bg {
+  background-image: url(https://ak.picdn.net/shutterstock/videos/35014867/thumb/12.jpg);
+}
+.fairy-bg {
+  background-image: url(https://images7.alphacoders.com/353/thumb-1920-353013.jpg);
+}
+.fighting-bg {
+  background-image: url(https://image.freepik.com/vetores-gratis/fundo-do-ringue-de-boxe-area-de-esportes-iluminada-para-lutar-esporte-perigoso_33099-1023.jpg);
+}
+.fire-bg {
+  background-image: url(https://i.ytimg.com/vi/9X3Fg21XIJQ/maxresdefault.jpg);
+}
+.flying-bg {
+  background-image: url(https://coverfiles.alphacoders.com/762/76276.png);
+}
+.ghost-bg {
+  background-image: url(https://cdn.wallpapersafari.com/8/84/3wZY9S.jpg);
+}
+.ground-bg {
+  background-image: url(https://static.wikia.nocookie.net/pokemonacademy/images/6/6d/Desert.png/revision/latest?cb=20181001164646);
+}
+.ice-bg {
+  background-image: url(http://i.imgur.com/HdgMKD9.jpg);
+}
+.normal-bg {
+  background-image: url();
+}
+.poison-bg {
+  background-image: url(https://static.wikia.nocookie.net/wingsoffire/images/6/6e/PoisonJungleJoyAng.jpeg/revision/latest?cb=20190928033907);
+}
+.psychic-bg {
+  background-image: url(https://i.ytimg.com/vi/D3fKX9qQAOA/maxresdefault.jpg);
+}
+.rock-bg {
+  background-image: url(https://i.redd.it/c4qepdmg34rz.jpg);
+}
+.steel-bg {
+  background-image: url(https://cdn.donmai.us/original/d0/c1/d0c1a4aa4fcf34a65ca7fe9e82eed028.jpg);
+}
+.water-bg {
+  background-image: url(https://cdna.artstation.com/p/assets/images/images/033/652/032/large/benjamin-aw-yong-animewater-scene.jpg?1610205516);
+}

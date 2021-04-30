@@ -1,0 +1,122 @@
+.card-container {
+
+  border: 5px solid rgba(255, 255, 255, 0.931);
+  box-shadow: 6px 6px 6px 3px rgba(2, 2, 2, 0.527);
+  width: 180px;
+  height: 300px;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .box-image{
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .circle{
+      background-color: rgba(255, 255, 255, 0.52);
+      border-radius: 50%;
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      transition: background-color 0.5s;
+    }
+    
+    button{
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-top: 50px;
+      img {
+        width: 150px;
+        height: auto;
+      } 
+    }
+    margin-bottom: -20px;
+  }
+
+  .box-number-pokemon {
+    background-color: rgba(2, 2, 2, 0.164);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 15px;
+    
+    span{
+      font-size: 10px;
+      font-weight: bold;
+    }
+  }
+  .name-pokemon{
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: -20px;
+  }
+
+  .type-pokemon {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -25px;
+  }
+}
+
+.grass {
+  background-color: #147b3d;
+}
+.bug {
+  background-color: #1c4b27;
+}
+.dark {
+  background-color: #595978;
+}
+.dragon {
+  background-color: #448a95;
+}
+.eletric {
+  background-color: #e2e32b;
+}
+.fairy {
+  background-color: #961a45;
+}
+.fighting {
+  background-color: #994025;
+}
+.fire {
+  background-color: #ab1f24;
+}
+.flying {
+  background-color: #4a677d;
+}
+.ghost {
+  background-color: #906791;
+}
+.ground {
+  background-color: #a8702d;
+}
+.ice {
+  background-color: #86d2f5;
+}
+.normal {
+  background-color: #ca98a6;
+}
+.poison {
+  background-color: #5e2d89;
+}
+.psychic {
+  background-color: #a52a6c;
+}
+.rock {
+  background-color: #48190b;
+}
+.steel {
+  background-color: #43bd94;
+}
+.water {
+  background-color: #1552e1;
+}
