@@ -1,5 +1,5 @@
 .card-container {
-
+  
   border: 5px solid rgba(255, 255, 255, 0.931);
   box-shadow: 6px 6px 6px 3px rgba(2, 2, 2, 0.527);
   width: 180px;
@@ -33,7 +33,7 @@
       margin-top: 50px;
       img {
         width: 150px;
-        height: auto;
+        height: 150px;
       } 
     }
     margin-bottom: -20px;
@@ -67,10 +67,10 @@
 }
 
 .grass {
-  background-color: #147b3d;
+  background-color: #50d84b;
 }
 .bug {
-  background-color: #1c4b27;
+  background-color: #457e52;
 }
 .dark {
   background-color: #595978;

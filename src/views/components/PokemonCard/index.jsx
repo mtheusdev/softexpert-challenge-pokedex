@@ -1,20 +1,21 @@
 import('./pokemon-card.style.scss')
 
-const PokemonCard = props => {
+const PokemonCard = ({imagePokemon, numberPokemon, namePokemon, typePokemon}) => {
+  const classes = `card-container ${typePokemon}`
   return (
-    <div className="card-container grass">
+    <div className={classes}>
       <div className="box-image">
         <div className="circle">
         </div>
         <button>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt=""/>
+            <img src={imagePokemon} alt={namePokemon}/>
         </button>
       </div>
       <div className="box-number-pokemon">
-        <span>#025</span>
+        <span>{numberPokemon}</span>
       </div>
-      <span className="name-pokemon">Bulbasaur</span>
-      <span className="type-pokemon">Type: Grass</span>
+      <span className="name-pokemon">{namePokemon}</span>
+      <span className="type-pokemon">Type: {typePokemon}</span>
     </div>
   )
 }

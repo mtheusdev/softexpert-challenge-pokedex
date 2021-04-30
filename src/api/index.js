@@ -1,9 +1,8 @@
-import Axios from 'axios';
-const { URL_API_POKEMON } = process.env;
+import axios from 'axios';
 
-const Api = Axios.create({
-    baseURL: URL_API_POKEMON,
+const api = axios.create({
+    baseURL: 'https://pokeapi.co/api/v2/',
     timeout: 20000
 });
 
-export default Api;
+export default api;
