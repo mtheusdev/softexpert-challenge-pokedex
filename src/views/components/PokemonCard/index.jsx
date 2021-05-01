@@ -6,10 +6,10 @@ const PokemonCard = ({imagePokemon, numberPokemon, namePokemon, typePokemon}) =>
     <div className={classes}>
       <div className="box-image">
         <div className="circle">
+          <button>
+              <img src={imagePokemon} alt={namePokemon}/>
+          </button>
         </div>
-        <button>
-            <img src={imagePokemon} alt={namePokemon}/>
-        </button>
       </div>
       <div className="box-number-pokemon">
         <span>{numberPokemon}</span>
