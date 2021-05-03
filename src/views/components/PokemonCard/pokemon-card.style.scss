@@ -19,20 +19,19 @@
       border-radius: 50%;
       width: 160px;
       height: 160px;
-      margin-top: 20px;
       
-      button{
-        position: relative;
+      button {
         background: none;
         border: none;
         cursor: pointer;
-        margin-top: 30px;
+
         img {
+          margin-top: 30px;
           width: 150px;
           height: 150px;
         } 
       }
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
   }
 

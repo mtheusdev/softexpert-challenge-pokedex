@@ -1,11 +1,11 @@
 const initialState = {
   pokemons: [],
-  selectedPokemon: ''
+  selectedPokemon: {}
 }
 
 const pokemonReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'GET_ALL_POKEMONS':
+    case 'SET_ALL_POKEMONS':
       return {
         ...state,
         pokemons: action.payload

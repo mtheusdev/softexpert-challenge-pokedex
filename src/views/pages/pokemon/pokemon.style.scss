@@ -1,81 +1,101 @@
-.container-pokemon-details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ 
+.container-page{
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
-  
-  span.name-pokemon {
-    font-size: 50px;
-    color: white;
-    padding: 0 30px 0 30px;
-    position: absolute;
-    z-index: 1;
+
+  .icon {
+      margin: 50px 0 50px 50px;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.787);
+      border-radius: 40%;
+      color: rgb(0, 0, 0);
   }
 
-  .pokemon{
-    padding: 30px;
-    width: 500px;
-    height: 320px;
-    position: absolute;
-    border-radius: 30px;
+  .container-pokemon-details {
+    margin-right: 50px ;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    box-shadow: inset 0 0 0.5em #ffffff, 0 0 0.5em #00000073;
 
-
-    button.sprite{
-      height: 150px;
-      width: 150px;
-      margin-left: 400px;
-      margin-top: -60px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      img {
-        height: 150px;
-        width: 150px;
-      }
+    span.name-pokemon {
+      font-size: 50px;
+      text-transform: capitalize;
+      color: white;
+      padding: 0 30px 0 30px;
+      position: absolute;
+      z-index: 1;
     }
-    
-    div.pokemon-image {
-      margin-top: -50px;
-      img {
-        width: 350px;
-        height: 350px;
+    .pokemon{
+      padding: 30px;
+      width: 500px;
+      height: 320px;
+      position: absolute;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: inset 0 0 0.5em #ffffff, 0 0 0.5em #00000073;
+  
+  
+      button.sprite{
+        height: 100px;
+        width: 100px;
+        margin-left: 400px;
+        margin-top: -10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        img {
+          height: 100px;
+          width: 100px;
+        }
       }
       
+      div.pokemon-image {
+        margin-top: -50px;
+        img {
+          width: 300px;
+          height: 300px;
+        }
+        
+      }
     }
-  }
-
-  .details {
-    width: 500px;
-    height: 700px;
-    background-color: rgb(245, 245, 245);
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    box-shadow: inset 0 0 1em #252525, 1em 1em 3em rgb(0, 0, 0);
-  }
   
-  table {
-    padding: 20px;
-    margin-bottom: 25px;
+    .details {
+      width: 500px;
+      height: 700px;
+      background-color: rgb(245, 245, 245);
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: inset 0 0 1em #252525, 1em 1em 3em rgb(0, 0, 0);
+    }
     
-    th {
-      font-size: 20px;
-      font-weight: 300;
+    table {
+      padding: 20px;
+      margin-bottom: 25px;
+      
+      th {
+        font-size: 20px;
+        font-weight: 300;
+        
+      }
+      td {
+        padding: 5px;
+        padding-left: 30px;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
     }
-    td {
-      padding-left: 30px;
-      font-size: 25px;
-      font-weight: 500;
-    }
+  
   }
-
 }
+
 
 .grass-bg {
   background-image: url(https://i.pinimg.com/originals/b1/da/c0/b1dac0470bdf2f7cc0c559599fba19f9.jpg);
@@ -89,7 +109,7 @@
 .dragon-bg {
   background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b9efbc15-761b-4eb1-818f-a87f60753ce6/dbboaed-648f8c4d-2577-40de-9e14-831c26f69365.jpg/v1/fill/w_1280,h_720,q_75,strp/thefatrat___fly_away_official_artwork_by_jordangrimmer_dbboaed-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03MjAiLCJwYXRoIjoiXC9mXC9iOWVmYmMxNS03NjFiLTRlYjEtODE4Zi1hODdmNjA3NTNjZTZcL2RiYm9hZWQtNjQ4ZjhjNGQtMjU3Ny00MGRlLTllMTQtODMxYzI2ZjY5MzY1LmpwZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.-QxU4GSDK6z5pzISpAvSDyTHmTYrskzU2bK2Z6RW0PA);
 }
-.eletric-bg {
+.electric-bg {
   background-image: url(https://ak.picdn.net/shutterstock/videos/35014867/thumb/12.jpg);
 }
 .fairy-bg {
@@ -108,13 +128,13 @@
   background-image: url(https://cdn.wallpapersafari.com/8/84/3wZY9S.jpg);
 }
 .ground-bg {
-  background-image: url(https://static.wikia.nocookie.net/pokemonacademy/images/6/6d/Desert.png/revision/latest?cb=20181001164646);
+  background-image: url(https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/200306926/original/bcef82fcd2c902692f26778ad3670c97be7df4b4/draw-a-landscape-background-or-your-favorite-scenery.jpg);
 }
 .ice-bg {
   background-image: url(http://i.imgur.com/HdgMKD9.jpg);
 }
 .poison-bg {
-  background-image: url(https://static.wikia.nocookie.net/wingsoffire/images/6/6e/PoisonJungleJoyAng.jpeg/revision/latest?cb=20190928033907);
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac7f3682-4ff0-4c22-9d69-8b8308b3480d/d2q9bxl-0cfa993b-2637-4f07-a024-5a598934ec5e.png/v1/fill/w_900,h_410,q_80,strp/poison__free_background__by_minacarolina_d2q9bxl-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDEwIiwicGF0aCI6IlwvZlwvYWM3ZjM2ODItNGZmMC00YzIyLTlkNjktOGI4MzA4YjM0ODBkXC9kMnE5YnhsLTBjZmE5OTNiLTI2MzctNGYwNy1hMDI0LTVhNTk4OTM0ZWM1ZS5wbmciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.n2ezOAUI7A92arGF9m20KxTcriCOjA2UZ8YHVtC_fDM);
 }
 .psychic-bg {
   background-image: url(https://i.ytimg.com/vi/D3fKX9qQAOA/maxresdefault.jpg);

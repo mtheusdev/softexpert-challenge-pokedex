@@ -1,8 +1,8 @@
 //action creator receive all pokemons (array)
-export function getPokemons(pokemons) {
+export function setPokemonsRedux(pokemons) {
   // return action (object)
   return {
-    type: 'GET_ALL_POKEMONS',
+    type: 'SET_ALL_POKEMONS',
     payload: pokemons
   }
 
