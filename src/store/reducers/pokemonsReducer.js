@@ -1,6 +1,7 @@
 const initialState = {
   pokemons: [],
-  selectedPokemon: {}
+  selectedPokemon: {},
+  currentUrl: 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0'
 }
 
 const pokemonReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const pokemonReducer = (state = initialState, action) => {
         ...state,
         pokemons: action.payload
       }
+    case 'SET_CURRENT_URL':
+      return {
+        ...state,
+        currentUrl: action.payload
+    }
     case 'SELECT_POKEMON':
       return {
         ...state,

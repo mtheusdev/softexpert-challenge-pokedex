@@ -7,17 +7,17 @@ import './App.css';
 function App() {
   return (
     <Router>
-            <Switch>
-                {Routes.map((item, key) => {
-                    document.title = item.title;
-                    return(
-                        <Route path={item.path} exact={item.exact} key={key}>
-                            <item.page />
-                        </Route>
-                    )
-                })}
-            </Switch>
-        </Router>
+      <Switch>
+        {Routes.map((item, key) => {
+          document.title = item.title;
+          return(
+            <Route path={item.path} exact={item.exact} key={key}>
+              <item.page />
+            </Route>
+          )
+        })}
+      </Switch>
+    </Router>
   );
 }
 

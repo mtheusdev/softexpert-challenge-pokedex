@@ -1,32 +1,33 @@
+import { useState } from 'react'
+import { withRouter } from 'react-router-dom'
+import { makeParamsToPokemonPage } from 'utils'
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom'
 import { BiChevronLeft } from 'react-icons/bi';
-import {useState} from 'react'
+import TableInfoPokemon from 'views/components/TableInfoPokemon'
 import './pokemon.style.scss'
 
 const PokemonPage = props => {
+  const [sprite, setSprite] = useState(true)
 
   const { pokemon } = props
-  const {skills, baseStatus, height, weight, typePokemon, typesPokemon, spriteFront, spriteBack, namePokemon, imagePokemon} = pokemon 
-  const bgImage = `container-page ${typePokemon}-bg`
-  const bgColor = `pokemon ${typePokemon}`
-  const [sprite, setSprite] = useState(true)
-  const stringSkills = skills.map(el => { return el.ability.name}).toString().replaceAll(',', ', ')
-  const stringTypes = typesPokemon.map(el => { return el.type.name}).toString().replaceAll(',', ', ')
-  const stringStatus = baseStatus.map(el => { 
-    return el.effort > 0 ? el.stat.name : null
-    }).toString()
-    .replaceAll(',', ' ')
-    .trim()
-    .replaceAll(' ', ',')
-    .replaceAll(',,', ', ')
-    .replaceAll(',', ', ') 
-  // complex filter to format String
+  const {stringSkills, stringStatus, stringTypes, spriteFront, spriteBack, height, weight, namePokemon, imagePokemon, bgColor, bgImage} = makeParamsToPokemonPage(pokemon)
+
+  const goBack = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (document.referrer !== `http://localhost:3000`) {
+        props.history.push('/');
+    }
+    else {
+        props.history.go(-1);
+    }
+  }
+
   return (
     <div className={bgImage}>
-      <Link to="/home">
+      <button className="go-back-btn" onClick={goBack}>
         <BiChevronLeft className="icon"/>
-      </Link>
+      </button>
       <div className="container-pokemon-details">
         <div className="box-pokemon">
         <span className="name-pokemon">{namePokemon}</span>
@@ -40,32 +41,7 @@ const PokemonPage = props => {
             <img src={imagePokemon} alt={namePokemon}/>
           </div>
         </div>
-        <div className="details">
-          <table>
-            <tbody>
-              <tr>
-                <th>Height</th>
-                <td>{((height/10) * 100).toFixed(0)}cm</td>
-              </tr>
-              <tr>
-                <th>Weight</th>
-                <td>{(weight/10)}kg</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>{stringStatus}</td>
-              </tr>
-              <tr>
-                <th>Skills</th>
-                <td>{stringSkills}</td>
-              </tr>
-              <tr>
-                <th>Types</th>
-                <td>{stringTypes}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+          <TableInfoPokemon height={height} weight={weight} stringTypes={stringTypes} stringStatus={stringStatus} stringSkills={stringSkills}/>
         </div>
       </div>
     </div>
@@ -77,4 +53,4 @@ function mapStateToProps(state) {
     pokemon: state.pokemons.selectedPokemon
   }
 }
-export default connect(mapStateToProps)(PokemonPage)
+export default withRouter(connect(mapStateToProps)(PokemonPage))

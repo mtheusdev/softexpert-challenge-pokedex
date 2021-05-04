@@ -1,0 +1,28 @@
+.details {
+  width: 500px;
+  height: 700px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: inset 0 0 1em #252525, 1em 1em 3em rgb(0, 0, 0);
+
+  table {
+    padding: 25px;
+    margin-bottom: 25px;
+    th {
+      font-size: 20px;
+      font-weight: 300;
+    }
+    td {
+      padding: 5px;
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+
+}
+
+
