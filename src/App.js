@@ -1,20 +1,19 @@
-import Routes from './routes/index';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import './App.css';
+import React from 'react';
+import Routes from './routes/index';
+import './App.scss';
 
 function App() {
   return (
     <Router>
       <Switch>
-        {Routes.map((item, key) => {
+        {Routes.map((item) => {
           document.title = item.title;
-          return(
-            <Route path={item.path} exact={item.exact} key={key}>
+          return (
+            <Route path={item.path} exact={item.exact} key={item.title}>
               <item.page />
             </Route>
-          )
+          );
         })}
       </Switch>
     </Router>
