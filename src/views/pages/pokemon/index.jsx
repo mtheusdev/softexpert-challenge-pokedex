@@ -40,33 +40,36 @@ const PokemonPage = ({ pokemon, history }) => {
 
   return (
     <div className={bgImage}>
-      <button type="button" className="go-back-btn" onClick={goBack}>
+      <button className="go-back-btn" onClick={(e) => goBack(e)} type="button">
         <BiChevronLeft className="icon" />
       </button>
       <div className="container-pokemon-details">
-        <div className="box-pokemon">
-          <span className="name-pokemon">{namePokemon}</span>
-          <div className={bgColor}>
-            <button
-              type="button"
-              className="sprite"
-              onClick={() => {
-                setSprite(!sprite);
-              }}
-            >
-              <img src={sprite ? spriteFront : spriteBack} alt="" />
-            </button>
-            <div className="pokemon-image">
-              <img src={imagePokemon} alt={namePokemon} />
+        <div className="card">
+          <div className="face front">
+            <span className="name-pokemon">{namePokemon}</span>
+            <div className={bgColor}>
+              <button
+                type="button"
+                className="sprite"
+                onClick={() => {
+                  setSprite(!sprite);
+                }}
+              >
+                <img src={sprite ? spriteFront : spriteBack} alt="" />
+              </button>
+              <div className="pokemon-image">
+                <img src={imagePokemon} alt={namePokemon} />
+              </div>
             </div>
+            <TableInfoPokemon
+              height={height}
+              weight={weight}
+              stringTypes={stringTypes}
+              stringStatus={stringStatus}
+              stringSkills={stringSkills}
+            />
           </div>
-          <TableInfoPokemon
-            height={height}
-            weight={weight}
-            stringTypes={stringTypes}
-            stringStatus={stringStatus}
-            stringSkills={stringSkills}
-          />
+          <div className="face back" />
         </div>
       </div>
     </div>
