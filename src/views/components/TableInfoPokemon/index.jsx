@@ -26,7 +26,9 @@ const TableInfoPokemon = ({
         <tbody>
           <tr>
             <th>Height</th>
-            <td>{((height / 10) * 100).toFixed(0)}cm</td>
+            <td data-testid="height-field">
+              {((height / 10) * 100).toFixed(0)}cm
+            </td>
           </tr>
           <tr>
             <th>Weight</th>

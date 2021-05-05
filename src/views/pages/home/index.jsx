@@ -53,7 +53,7 @@ const HomePage = () => {
    * @returns void
    */
   useEffect(() => {
-    if (pokeCtx.length === 0) {
+    if (pokeCtx && pokeCtx.length === 0) {
       getPokemons();
     }
   }, []);
@@ -64,11 +64,15 @@ const HomePage = () => {
       onScroll={handleScroll}
       style={{ overflowY: 'scroll' }}
     >
+      <div className="title">
+        <h1 data-testid="title-field">PokExpert</h1>
+      </div>
       <div className="container-cards-pagination">
         <div className="container-cards">
-          {pokeCtx.map((pokemon) => (
-            <PokemonCard key={pokemon.data.id} pokemon={pokemon} />
-          ))}
+          {pokeCtx &&
+            pokeCtx.map((pokemon) => (
+              <PokemonCard key={pokemon.data.id} pokemon={pokemon} />
+            ))}
         </div>
       </div>
     </div>

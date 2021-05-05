@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { BiChevronLeft } from 'react-icons/bi';
 import TableInfoPokemon from '../../components/TableInfoPokemon';
 import { makeParamsToPokemonPage, style } from '../../../utils';
+import useSprite from '../../../hooks/useSprite';
 
 const PokemonPage = ({ pokemon, history }) => {
-  const [sprite, setSprite] = useState(true);
+  const { sprite, changeSprite } = useSprite(false);
 
   const {
     stringSkills,
@@ -38,23 +39,23 @@ const PokemonPage = ({ pokemon, history }) => {
 
   return (
     <div className={bgImage}>
-      <button className="go-back-btn" onClick={(e) => goBack(e)} type="button">
-        <BiChevronLeft className="icon" />
-      </button>
+      <div className="buttons">
+        <button
+          className="go-back-btn"
+          onClick={(e) => goBack(e)}
+          type="button"
+        >
+          <BiChevronLeft className="icon" />
+        </button>
+        <button type="button" className="sprite" onClick={changeSprite}>
+          <img src={sprite ? spriteFront : spriteBack} alt="" />
+        </button>
+      </div>
       <div className="container-pokemon-details">
         <div className="card">
           <div className="face front">
             <span className="name-pokemon">{namePokemon}</span>
             <div className={bgColor}>
-              <button
-                type="button"
-                className="sprite"
-                onClick={() => {
-                  setSprite(!sprite);
-                }}
-              >
-                <img src={sprite ? spriteFront : spriteBack} alt="" />
-              </button>
               <div className="pokemon-image">
                 <img src={imagePokemon} alt={namePokemon} />
               </div>

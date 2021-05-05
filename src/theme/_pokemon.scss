@@ -37,22 +37,9 @@
           justify-content: space-between;
           box-shadow: inset 0 0 0.5em #ffffff, 0 0 0.5em #00000073;
 
-          button.sprite {
-            height: 6.25rem;
-            width: 6.25rem;
-            margin-left: 25rem;
-            margin-top: -0.625rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            img {
-              height: 6.25rem;
-              width: 6.25rem;
-            }
-          }
-
           div.pokemon-image {
-            margin-top: -3.125rem;
+            z-index: 1;
+            margin-top: 3rem;
             img {
               width: 18.75rem;
               height: 18.75rem;
@@ -80,20 +67,38 @@
       }
     }
   }
-  .go-back-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    button.sprite {
+      margin: 7.5rem 0 0 6rem;
+      position: absolute;
+      height: 6.25rem;
+      width: 6.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      img {
+        height: 8.25rem;
+        width: 8.25rem;
+      }
+    }
 
-  .icon {
-    position: absolute;
-    margin: 3.125rem 0 3.125rem 3.125rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background-color: rgba(255, 255, 255, 0.787);
-    border-radius: 40%;
-    color: rgb(0, 0, 0);
+    .go-back-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .icon {
+      position: absolute;
+      margin: 3.125rem 0 3.125rem 3.125rem;
+      width: 3.75rem;
+      height: 3.75rem;
+      background-color: rgba(255, 255, 255, 0.787);
+      border-radius: 40%;
+      color: rgb(0, 0, 0);
+    }
   }
 }
 
