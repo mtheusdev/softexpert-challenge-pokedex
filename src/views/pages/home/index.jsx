@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PokemonCard from '../../components/PokemonCard';
 import api from '../../../api';
+import { PokemonContext } from '../../../providers/CurrentPokemons';
 import {
   setPokemonsRedux,
   setCurrentUrl,
 } from '../../../store/actions/pokemons';
-// import './home.style.scss';
 
 const HomePage = () => {
+  const { pokeCtx, setPokeCtx } = useContext(PokemonContext);
   const [lastRequisition, setLastRequisition] = useState(false);
-  const [localPokemons, setLocalPokemons] = useState([]);
   const [urlRequisition, setUrlRequisition] = useState(
     'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0',
   );
@@ -19,8 +19,8 @@ const HomePage = () => {
   const getDetailsPokemon = (resultObject) => {
     const promises = resultObject.map((e) => api.get(e.url));
     Promise.all(promises).then((result) => {
-      const newPokemons = localPokemons.concat(result);
-      setLocalPokemons(newPokemons);
+      const newPokemons = pokeCtx.concat(result);
+      setPokeCtx(newPokemons);
     });
   };
 
@@ -48,7 +48,7 @@ const HomePage = () => {
   );
 
   useEffect(() => {
-    if (localPokemons.length === 0) {
+    if (pokeCtx.length === 0) {
       getPokemons();
     }
   }, []);
@@ -61,7 +61,7 @@ const HomePage = () => {
     >
       <div className="container-cards-pagination">
         <div className="container-cards">
-          {localPokemons.map((pokemon) => (
+          {pokeCtx.map((pokemon) => (
             <PokemonCard key={pokemon.data.id} pokemon={pokemon} />
           ))}
         </div>

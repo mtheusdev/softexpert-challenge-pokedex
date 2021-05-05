@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { BiChevronLeft } from 'react-icons/bi';
 import TableInfoPokemon from '../../components/TableInfoPokemon';
 import { makeParamsToPokemonPage } from '../../../utils';
-// import './pokemon.style.scss';
 
 const PokemonPage = ({ pokemon, history }) => {
   const [sprite, setSprite] = useState(true);

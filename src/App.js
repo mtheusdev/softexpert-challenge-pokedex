@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import React from 'react';
+import React, { useState } from 'react';
 import Routes from './routes/index';
 import './theme/main.scss';
+import { PokemonContext } from './providers/CurrentPokemons';
 import { store, persistor } from './store/storeConfig';
 
 function App() {
+  const [pokeCtx, setPokeCtx] = useState([]);
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -16,7 +18,9 @@ function App() {
               document.title = item.title;
               return (
                 <Route path={item.path} exact={item.exact} key={item.title}>
-                  <item.page />
+                  <PokemonContext.Provider value={{ pokeCtx, setPokeCtx }}>
+                    <item.page />
+                  </PokemonContext.Provider>
                 </Route>
               );
             })}

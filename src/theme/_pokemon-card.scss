@@ -67,7 +67,8 @@ $px-20: 1.25rem;
 
   &:hover {
     box-shadow: 0.75rem 0.75rem 0.75rem $px-6 rgba(2, 2, 2, 0.527);
-    transform: perspective(31.25rem) translate3d(0, -0.938rem, 0) rotateX(0deg);
+    transform: perspective(31.25rem) scale(1.05) translate3d(0, -0.92rem, 0)
+      rotateX(0deg);
   }
 }
 
