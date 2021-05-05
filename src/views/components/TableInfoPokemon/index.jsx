@@ -1,3 +1,4 @@
+import React from 'react';
 import './table-info.style.scss';
 import PropTypes from 'prop-types';
 

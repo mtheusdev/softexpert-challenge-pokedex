@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -61,7 +61,6 @@ const HomePage = ({ setPokemonsStore, setRequestUrl, pokemons, url }) => {
     if (pokemons.length <= 0) {
       getPokemons();
     }
-    // eslint-disable-next-line
   }, []);
 
   return (

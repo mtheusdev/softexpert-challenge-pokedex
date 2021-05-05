@@ -7,12 +7,11 @@
     .card {
         transform-style: preserve-3d;
         display: flex;
-        align-items: center;
         justify-content: center;
-        // padding-top: 18%;
+        margin-top: 75px;
+        position: relative;
       .face{
         position: absolute;
-        margin-top: 35%;
         transition: 1s ease-in-out;
         transform: perspective(500px) rotateY(0deg) translateZ(1px);
       }

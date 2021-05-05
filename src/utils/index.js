@@ -38,21 +38,11 @@ export function makeParamsToPokemonPage(pokemon) {
     imagePokemon,
     bgImage: `container-page ${typePokemon}-bg`,
     bgColor: `pokemon ${typePokemon}`,
-    stringSkills: skills
-      .map((el) => el.ability.name)
-      .toString()
-      .replaceAll(',', ', '),
-    stringTypes: typesPokemon
-      .map((el) => el.type.name)
-      .toString()
-      .replaceAll(',', ', '),
+    stringSkills: skills.map((item) => item.ability.name).join(', '),
+    stringTypes: typesPokemon.map((item) => item.type.name).join(', '),
     stringStatus: baseStatus
-      .map((el) => (el.effort > 0 ? el.stat.name : null))
-      .toString()
-      .replaceAll(',', ' ')
-      .trim()
-      .replaceAll(' ', ',')
-      .replaceAll(',,', ', ')
-      .replaceAll(',', ', '),
+      .filter((item) => item.effort !== 0)
+      .map((item) => item.stat.name)
+      .join(', '),
   };
 }
