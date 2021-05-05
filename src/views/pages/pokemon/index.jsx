@@ -2,16 +2,11 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { BiChevronLeft } from 'react-icons/bi';
-import PropTypes from 'prop-types';
 import TableInfoPokemon from '../../components/TableInfoPokemon';
 import { makeParamsToPokemonPage } from '../../../utils';
-import './pokemon.style.scss';
+// import './pokemon.style.scss';
 
 const PokemonPage = ({ pokemon, history }) => {
-  PokemonPage.propTypes = {
-    pokemon: PropTypes.objectOf.isRequired,
-    history: PropTypes.func.isRequired,
-  };
   const [sprite, setSprite] = useState(true);
 
   const {

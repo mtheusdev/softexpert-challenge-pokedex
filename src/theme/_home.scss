@@ -1,6 +1,7 @@
-.scrollPage{
+.scrollPage {
   height: 100vh;
   width: 100vw;
+
   .container-cards-pagination {
     display: flex;
     flex-direction: column;
@@ -8,64 +9,62 @@
     justify-content: center;
 
     .container-cards {
-      padding: 100px;
+      padding: 6.25rem;
       display: grid;
-      grid-gap: 30px;
+      grid-gap: 1.875rem;
     }
-    @media (min-width:300px) {
-      /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+    @media (min-width: 18.75rem) {
+      /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
       .container-cards {
         grid-template-columns: repeat(1, 1fr);
       }
     }
-    @media (min-width: 480px) { /* smartphones, Android phones, landscape iPhone */ 
+    @media (min-width: 30rem) {
+      /* smartphones, Android phones, landscape iPhone */
       .container-cards {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    @media (min-width:780px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    @media (min-width: 48.75rem) {
+      /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
       .container-cards {
         grid-template-columns: repeat(3, 1fr);
       }
     }
-    @media (min-width:941px) { 
-      /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    @media (min-width: 58.813rem) {
+      /* tablet, landscape iPad, lo-res laptops ands desktops */
       .container-cards {
         grid-template-columns: repeat(4, 1fr);
       }
     }
-    @media (min-width:1140px) { 
-      /* big landscape tablets, laptops, and desktops */ 
+    @media (min-width: 71.25rem) {
+      /* big landscape tablets, laptops, and desktops */
       .container-cards {
         grid-template-columns: repeat(5, 1fr);
       }
     }
-    @media (min-width:1321px) {
+    @media (min-width: 82.563) {
       .container-cards {
         grid-template-columns: repeat(6, 1fr);
       }
-    
     }
-    
-    @media (min-width:1592px) {
+
+    @media (min-width: 99.5rem) {
       .container-cards {
         grid-template-columns: repeat(7, 1fr);
       }
-    
     }
-    
-    @media (min-width:1840px) {
+
+    @media (min-width: 115rem) {
       .container-cards {
         grid-template-columns: repeat(8, 1fr);
       }
-    
     }
-    
-    @media (min-width:2208px) {
+
+    @media (min-width: 138rem) {
       .container-cards {
         grid-template-columns: repeat(9, 1fr);
       }
-    
     }
   }
 }

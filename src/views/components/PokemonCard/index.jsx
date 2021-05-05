@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { makeParamsPokemonCard } from '../../../utils/index';
 import { selectPokemon } from '../../../store/actions/pokemons';
 
-import('./pokemon-card.style.scss');
+// import('./pokemon-card.style.scss');
 
 const PokemonCard = ({ pokemon, setSelectedPokemon, history }) => {
   PokemonCard.propTypes = {
