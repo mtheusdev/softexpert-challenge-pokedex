@@ -9,6 +9,9 @@ import { store, persistor } from './store/storeConfig';
 
 function App() {
   const [pokeCtx, setPokeCtx] = useState([]);
+  const [urlCtx, setUrlCtx] = useState(
+    'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0',
+  );
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -18,7 +21,9 @@ function App() {
               document.title = item.title;
               return (
                 <Route path={item.path} exact={item.exact} key={item.title}>
-                  <PokemonContext.Provider value={{ pokeCtx, setPokeCtx }}>
+                  <PokemonContext.Provider
+                    value={{ pokeCtx, setPokeCtx, urlCtx, setUrlCtx }}
+                  >
                     <item.page />
                   </PokemonContext.Provider>
                 </Route>

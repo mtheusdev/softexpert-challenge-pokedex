@@ -66,11 +66,12 @@
         position: absolute;
         border-radius: 1.875rem;
         transform: perspective(31.25rem) rotateY(180deg);
-        background-image: url(https://i.pinimg.com/originals/8f/0c/42/8f0c42e4b5ffd76f3863950582070c1c.png);
         background-color: rgb(255, 255, 255);
+        background-size: cover;
+        background-repeat: no-repeat;
       }
     }
-    &:active {
+    &:hover {
       .face.front {
         transform: perspective(31.25rem) rotateY(180deg);
       }

@@ -1,21 +1,17 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
 import PokemonCard from '../../components/PokemonCard';
 import api from '../../../api';
 import { PokemonContext } from '../../../providers/CurrentPokemons';
-import {
-  setPokemonsRedux,
-  setCurrentUrl,
-} from '../../../store/actions/pokemons';
 
 const HomePage = () => {
-  const { pokeCtx, setPokeCtx } = useContext(PokemonContext);
+  const { pokeCtx, setPokeCtx, urlCtx, setUrlCtx } = useContext(PokemonContext);
   const [lastRequisition, setLastRequisition] = useState(false);
-  const [urlRequisition, setUrlRequisition] = useState(
-    'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0',
-  );
 
+  /** Must return a formatted object to assemble a component
+   * @param resultObject
+   * @returns void
+   */
   const getDetailsPokemon = (resultObject) => {
     const promises = resultObject.map((e) => api.get(e.url));
     Promise.all(promises).then((result) => {
@@ -24,16 +20,23 @@ const HomePage = () => {
     });
   };
 
+  /**
+   * must get the pokemons provided by the api and set the store status
+   * @returns void
+   */
   const getPokemons = async () => {
-    const { data } = await api.get(urlRequisition);
+    const { data } = await api.get(urlCtx);
     if (!data.next) {
       setLastRequisition(true);
     } else {
-      setUrlRequisition(data.next);
+      setUrlCtx(data.next);
     }
     getDetailsPokemon(data.results);
   };
-
+  /** Should get more pokemons when you get to the bottom of the screen
+   * @param event
+   * @returns void
+   */
   const handleScroll = useCallback(
     (e) => {
       const bottom =
@@ -46,7 +49,9 @@ const HomePage = () => {
     },
     [getPokemons],
   );
-
+  /** Must catch the first pokemons when loading the page for the first time
+   * @returns void
+   */
   useEffect(() => {
     if (pokeCtx.length === 0) {
       getPokemons();
@@ -70,25 +75,4 @@ const HomePage = () => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    pokemons: state.pokemons.pokemons,
-    url: state.pokemons.currentUrl,
-  };
-}
-function mapDispatchToProp(dispatch) {
-  return {
-    setPokemonsStore(pokemons) {
-      const action = setPokemonsRedux(pokemons);
-      dispatch(action);
-    },
-    setRequestUrl(url) {
-      const action = setCurrentUrl(url);
-      dispatch(action);
-    },
-  };
-}
-
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProp)(HomePage),
-);
+export default withRouter(HomePage);

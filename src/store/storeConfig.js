@@ -12,6 +12,12 @@ const reducers = combineReducers({
   pokemons: pokemonsReducer,
 });
 
+/**
+ * Must return a persistor reducer
+ * @param persistConfig
+ * @param reducers
+ * @returns reducer
+ */
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 const store = createStore(persistedReducer);

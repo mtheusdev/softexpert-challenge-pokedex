@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { BiChevronLeft } from 'react-icons/bi';
 import TableInfoPokemon from '../../components/TableInfoPokemon';
-import { makeParamsToPokemonPage } from '../../../utils';
+import { makeParamsToPokemonPage, style } from '../../../utils';
 
 const PokemonPage = ({ pokemon, history }) => {
   const [sprite, setSprite] = useState(true);
@@ -22,6 +22,10 @@ const PokemonPage = ({ pokemon, history }) => {
     bgImage,
   } = makeParamsToPokemonPage(pokemon);
 
+  /** Must return to the previous page
+   * @param event
+   * @returns void
+   */
   const goBack = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -63,7 +67,7 @@ const PokemonPage = ({ pokemon, history }) => {
               stringSkills={stringSkills}
             />
           </div>
-          <div className="face back" />
+          <div style={style} className="face back" />
         </div>
       </div>
     </div>

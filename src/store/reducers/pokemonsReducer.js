@@ -3,7 +3,12 @@ const initialState = {
   selectedPokemon: {},
   currentUrl: 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0',
 };
-
+/**
+ * Must return a new state after execute the action
+ * @param state
+ * @param action
+ * @returns object
+ */
 const pokemonReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_ALL_POKEMONS':

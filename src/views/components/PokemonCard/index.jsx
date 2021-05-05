@@ -27,12 +27,16 @@ const PokemonCard = ({ pokemon, setSelectedPokemon, history }) => {
   const classes = `card-container ${paramsPokemonCard.typePokemon}`;
   const url = `/pokemon/${paramsPokemonCard.numberPokemon}`;
 
+  /** Must navigate to set the selected pokemon in the store and navigate to his page
+   * @param e event
+   */
   const goToPokemonPage = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setSelectedPokemon(paramsPokemonCard);
     history.push(url);
   };
+
   return (
     <div className={classes}>
       <div className="box-image">
@@ -50,7 +54,10 @@ const PokemonCard = ({ pokemon, setSelectedPokemon, history }) => {
     </div>
   );
 };
-
+/** must map an action to the props
+ * @param dispatch
+ * @returns function
+ */
 function mapDispatchToProp(dispatch) {
   return {
     setSelectedPokemon(pokemon) {
@@ -60,4 +67,9 @@ function mapDispatchToProp(dispatch) {
   };
 }
 
+/** must export a PokemonCard component
+ * @param mapDispatchToProp
+ * @param PokemonCard
+ * @exports component
+ */
 export default withRouter(connect(null, mapDispatchToProp)(PokemonCard));
